@@ -1,3 +1,36 @@
+:root {
+    --background-1: radial-gradient(
+        circle at center,
+        #ff6f61 0%,
+        #e65c52 40%,
+        #b33a2c 70%,
+        #801f1a 100%
+    );
+    --background-2: radial-gradient(
+        circle at center,
+        #0047ab 0%,
+        #003399 35%,
+        #002677 60%,
+        #001e5c 80%,
+        #00123d 100%
+    );
+    --background-3: radial-gradient(
+        circle at center,
+        #ff9f1c 0%,
+        #ff7a00 35%,
+        #e65c00 60%,
+        #c23e00 85%,
+        #9e2a00 100%
+    );
+    --background-4: radial-gradient(
+        circle at center,
+        #00b140 0%,
+        #009933 35%,
+        #007a29 60%,
+        #005c20 80%,
+        #003d15 100%
+    );
+}
 body {
     display: flex;
     justify-content: center;
@@ -23,14 +56,31 @@ button {
     cursor: pointer;
     width: 340px;
     height: 450px;
+    margin-top: 100px;
     position: relative;
     background: url('./src/img/can.png') no-repeat center / contain;
 }
-.name {
-    color: white;
-    text-align: center;
-    font-size: 74px;
-    font-family: Impact;
+.name > img {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+.btn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    gap: 210px;
+    transform: translate(-50%, -50%);
+    z-index: 3;
 }
 
 .animation {
@@ -61,20 +111,20 @@ button {
 
 .can::after {
     content: "";
+    width: 170px;
+    height: 95px;
+    top: -8px;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-55%);
     position: absolute;
-    inset: 0;
     pointer-events: none;
+    background: url(./src/img/head.png) center / 100% no-repeat;
     z-index: 2;
 }
 
 .background {
-    background: radial-gradient(
-        circle at center,
-        #fa3232 0%,
-        #c73333 40%,
-        #700c0c 70%,
-        #500a0a 100%
-    );
+    background: var(--background-1);
 }
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
